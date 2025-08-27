@@ -1,0 +1,12 @@
+[
+  { "name": "Milk", "price": 2 },
+  { "name": "Bread", "price": 1 },
+  { "name": "Eggs", "price": 3 },
+  { "name": "Rice", "price": 5 },
+  { "name": "Apples", "price": 4 },
+  { "name": "Bananas", "price": 2 },
+  { "name": "Toothbrush", "price": 1 },
+  { "name": "Toothpaste", "price": 2 },
+  { "name": "Water Bottle", "price": 1 },
+  { "name": "Tomatoes", "price": 3 }
+]

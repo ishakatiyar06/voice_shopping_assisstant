@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Voice Command Shopping Assistant</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🛒 Voice Command Shopping Assistant</h1>
+      <div class="controls-row">
+        <label for="lang">Language</label>
+        <select id="lang">
+          <option value="en-US">English (US)</option>
+          <option value="en-IN">English (India)</option>
+          <option value="hi-IN">हिन्दी</option>
+        </select>
+
+        <button id="micBtn" class="btn">🎤 Start</button>
+        <button id="stopBtn" class="btn ghost">⏹ Stop</button>
+        <button id="suggestBtn" class="btn accent">🤖 Suggestions</button>
+        <button id="clearBtn" class="btn danger">Clear</button>
+      </div>
+      <div id="status" class="status">Status: idle</div>
+    </header>
+
+    <main>
+      <section class="left">
+        <div class="input-row">
+          <input id="textInput" placeholder="Type a command (e.g., 'add 2 kg rice', 'find toothpaste under 100')"/>
+          <button id="sendBtn" class="btn">Go</button>
+        </div>
+
+        <div class="recognized">Recognized: <span id="recognizedText" class="muted">—</span></div>
+
+        <h2>Your Cart</h2>
+        <ul id="cartList" class="cart-list"></ul>
+      </section>
+
+      <aside class="right">
+        <h3>Smart Suggestions</h3>
+        <div id="suggestionsBox" class="chips"></div>
+
+        <h4>Help — example phrases</h4>
+        <ul class="small">
+          <li>"add milk" / "add 2 bottles of water"</li>
+          <li>"remove milk" / "delete rice"</li>
+          <li>"find toothpaste under 100"</li>
+          <li>"लिस्ट में 2 किलो आटा जोड़ो" (Hindi)</li>
+          <li>Say just an item: "apples" (adds item)</li>
+        </ul>
+      </aside>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
