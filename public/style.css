@@ -47,20 +47,42 @@ input{flex:1;padding:10px;border-radius:8px;border:1px solid #e6edf3}
 #cartTotal { font-size: 16px; color:#0b84ff; margin-top:8px; }
 
 /* ✅ Tablet adjustments */
-@media (max-width: 900px){
-  main{flex-direction:column}
-  .right{width:auto}
+/* --- Responsive improvements --- */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .controls-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .left, .right {
+    width: 100%;
+    margin: 0;
+  }
+
+  .cart-container {
+    margin-top: 15px;
+  }
 }
 
-/* ✅ Mobile adjustments */
-@media (max-width: 600px){
-  h1{font-size:1.5rem}
-  .wrap{padding:12px}
-  .controls-row{flex-direction:column;align-items:stretch}
-  .btn{width:100%;text-align:center}
-  .input-row{flex-direction:column}
-  input{width:100%}
-  .cart-list li{flex-direction:column;align-items:flex-start}
-  .right{width:100%}
-  .chips{justify-content:center}
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  button, select, input {
+    width: 100%;
+    max-width: 320px;
+    margin: 4px 0;
+  }
+
+  .cart-container table {
+    font-size: 12px;
+  }
 }
