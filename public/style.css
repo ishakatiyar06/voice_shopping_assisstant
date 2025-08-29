@@ -86,3 +86,241 @@ input{flex:1;padding:10px;border-radius:8px;border:1px solid #e6edf3}
     font-size: 12px;
   }
 }
+/* --- Cart & Suggestions styling improvements --- */
+
+/* Cart list */
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Each cart item card */
+.cart-list li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Left: item name & category */
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-info strong {
+  font-size: 1rem;
+  color: #333;
+  display: block;
+}
+
+.cart-item-info small {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Right: price + qty controls */
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-item-controls span {
+  font-weight: bold;
+  color: #222;
+  min-width: 60px;
+  text-align: right;
+}
+
+.cart-item-controls button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart-item-controls button:hover {
+  background: #e8f0fe;
+  border-color: #5c9ded;
+}
+
+/* Suggestions as a grid */
+#suggestionsBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#suggestionsBox .chip {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#suggestionsBox .chip:hover {
+  background: #e8f0fe;
+  border-color: #5c9ded;
+}
+/* --- Input row with sticky Go button --- */
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.input-row button {
+  white-space: nowrap;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #5c9ded;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.input-row button:hover {
+  background: #417ec9;
+}
+
+/* --- Suggestions as grid on desktop, stacked on mobile --- */
+#suggestionsBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#suggestionsBox .chip {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#suggestionsBox .chip:hover {
+  background: #e8f0fe;
+  border-color: #5c9ded;
+}
+
+/* --- Responsive fixes --- */
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  /* Cart takes full width */
+  .cart-list {
+    width: 100%;
+  }
+
+  /* Suggestions stacked */
+  #suggestionsBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Go button full width under input */
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-row input,
+  .input-row button {
+    width: 100%;
+  }
+}
+/* --- Fix Quick Suggestions close (X) button --- */
+.suggestions-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.suggestions-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.suggestions-header button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.suggestions-header button:hover {
+  color: #d63384;
+}
+
+/* --- Fix Cart Quantity Controls --- */
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-item-controls button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  font-size: 1rem;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item-controls input[type="number"] {
+  width: 48px;
+  height: 28px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  padding: 0;
+}
