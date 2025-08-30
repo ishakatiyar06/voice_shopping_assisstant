@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function saveHistory() { localStorage.setItem(LS_HISTORY, JSON.stringify(history)); }
   function loadCart() { try { return JSON.parse(localStorage.getItem(LS_CART)) || []; } catch(e) { return []; } }
   function loadHistory() { try { return JSON.parse(localStorage.getItem(LS_HISTORY)) || []; } catch(e) { return []; } }
+  function capitalize(str) {if (!str) return ""; return str.charAt(0).toUpperCase() + str.slice(1);}
   function toast(msg, t = 1800) { toastEl.textContent = msg; toastEl.classList.remove("hidden"); setTimeout(()=> toastEl.classList.add("hidden"), t); }
   function norm(s) { return (s || "").toString().trim().toLowerCase(); }
 
@@ -209,9 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const subtotal = price * item.qty;
       total += subtotal;
       li.innerHTML = `<div>
-          <strong>${item.name}</strong> <span style="color:#666">• ${item.category}</span>
-          <div style="margin-top:6px;color:#333">₹${price} each • Subtotal: ₹${subtotal}</div>
-        </div>`;
+          <strong>${capitalize(item.name)}</strong> <span style="color:#666">• ${capitalize(item.category)}</span>
+</div>`;
       const right = document.createElement("div");
       const minus = document.createElement("button"); minus.className="qty-btn"; minus.textContent="-"; minus.onclick = ()=> updateQty(item.id, item.qty-1);
       const qspan = document.createElement("span"); qspan.textContent = ` ${item.qty} `;
